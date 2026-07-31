@@ -208,18 +208,14 @@ void BitcoinExchange::processInputFile(const std::string& filename) const
             continue;
         }
 
-        if (line.find(
-                delimiter,
-                separator + delimiter.length())
-            != std::string::npos)
+        if (line.find(delimiter,separator + delimiter.length()) != std::string::npos)
         {
             printBadInput(line);
             continue;
         }
 
         const std::string date = line.substr(0, separator);
-        const std::string valueText =
-            line.substr(separator + delimiter.length());
+        const std::string valueText = line.substr(separator + delimiter.length());
 
         double value;
 
